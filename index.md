@@ -1,6 +1,6 @@
 ---
 layout: page
-title Project 3
+title: Project 3
 description: Description of Project 3.
 nav_exclude: true
 ---
