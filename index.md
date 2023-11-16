@@ -10,7 +10,8 @@ nav_exclude: true
 ### Recipes and Rating Research Project
 
 This is for Project 3 for DSC80 at UCSD
-By Quinn Brandt
+
+By: Quinn Brandt
 
 ### Introduction
 
@@ -29,3 +30,28 @@ The second step is to analyze the missingness of the data. This is split into tw
 Our overarching research question throughout this project relates to comparing the average ratings of different types of data. Specifically comparing the average rating of recipes classified as savory (greater than 75th percentile protein and less than 25th -percentile sugar) and sweet recipes (less than 25th percentile protein and greater than 75th percentile sugar).
 
 As diet and obesity become a more prevelant topic in the US, it is important to analyze questions such as this to identify trends that may lead to poor diets. It also allows those creating recipes to cater to the likings of the general population better.
+
+### Data Cleaning and EDA
+
+There were many steps in the data cleaning process. They included:
+1. Merging the datasets
+2. Replacing 0 values with Nan
+3. Adding an average rating column
+4. Converting strings to pandas datetime objects
+5. Converting strings to lists when needed
+
+The first step to this project was to merge the two dataframes and clean the data. the recipe id and id columns matched up and thus it was very simple to merge these dataframes.
+
+Step two was replacing ratings of 0 with numpy NaN. The reasoning for this was that most ratings of 0 were due to reasons other than the recipe being bad. One example is people leaving comments on recipes they hadn't yet made who added a rating of 0.
+
+Thirdly, I added an average rating column to the merged dataframe. I did this by creating a dictionary of recipe ids and their average rating, then creating a new column and mapping the dictionary onto the recipe id. 
+
+The submitted and date columns of the dataframe were strings in the format of dates. I converted each of these to pandas date time objects, allowing them to be easier manipulated later.
+
+The nutrition column was a string that looked like a list. I converted this to a list then made individual columns for each element of the list (calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbs (PDV)). The columns tags and steps were also in the same format, however I did not convert these as they would not be necessary in my data analysis.
+
+Lastly I replaced some should be null values in the columns. Primarily in the description and review columns, there were values that should have been null ('.', '...', '-', '1') so I found some of the most common and replaced them with null.
+
+The head of the cleaned dataframe is shown below. I included only the inmportant columns for easier viewing.
+
+![Merged and cleaned dataset](merged_cleaned.jpg)
