@@ -13,6 +13,8 @@ This is for Project 3 for DSC80 at UCSD
 
 By: Quinn Brandt
 
+---
+
 ### Introduction
 
 With diets and trends coming and leaving more frequently than ever, it is interesting to try to analyze those trends using the recipes and reviews users leave online. This proect attempts to start an analysis of some of these trends.
@@ -30,6 +32,8 @@ The second step is to analyze the missingness of the data. This is split into tw
 Our overarching research question throughout this project relates to comparing the average ratings of different types of data. Specifically comparing the average rating of recipes classified as savory (greater than 75th percentile protein and less than 25th -percentile sugar) and sweet recipes (less than 25th percentile protein and greater than 75th percentile sugar).
 
 As diet and obesity become a more prevelant topic in the US, it is important to analyze questions such as this to identify trends that may lead to poor diets. It also allows those creating recipes to cater to the likings of the general population better.
+
+---
 
 ### Data Cleaning and EDA
 
@@ -62,6 +66,14 @@ The head of the cleaned dataframe is shown below. I included only the inmportant
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 
+---
+
 ### Univariate Analysis
+
 In this section, I explored the distributions of individual columns. The first of which was the protein column. In doing so I found that the bulk of the recipes fell under one of two categories. The vast majority had between 0-20 percent of daily value protein. There was another peak in the data around 40-60 grams of protein.
+
 <iframe src="assets/protein_hist.html" width=800 height=600 frameBorder=0></iframe>
+
+Another histogram I looked at was the distribution of the average starts column. From this I found that the majority of recipes had between a 4 and 5 star rating. And there were high distributions at whole and half numbers. 
+
+<iframe src="assets/star_hist.html" width=800 height=600 frameBorder=0></iframe>
