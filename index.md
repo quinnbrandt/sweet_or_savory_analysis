@@ -77,3 +77,34 @@ In this section, I explored the distributions of individual columns. The first o
 Another histogram I looked at was the distribution of the average starts column. From this I found that the majority of recipes had between a 4 and 5 star rating. And there were high distributions at whole and half numbers. 
 
 <iframe src="assets/star_hist.html" width=800 height=600 frameBorder=0></iframe>
+
+---
+
+### Bivariate Analysis
+
+Bivariate analysis consists of comparing two of the columns together. The first way that I did this was to compare the protein and sugar columns. The main takeawy from this was that the two seemed to be negatively correlated with very few high protein meals also having high sugar and vice versa.
+
+<iframe src="assets/pro_v_sug.html" width=800 height=600 frameBorder=0></iframe>
+
+Another way that I used bivariate analysis was by comparing the minutes the recipe took and the length of the review left. From this you can see the there is a negative correlation between the two and the longer a recipe takes, the shorter the reviews are. 
+
+<iframe src="assets/min_v_len.html" width=800 height=600 frameBorder=0></iframe>
+
+---
+
+### Interesting Aggregates
+
+In this aggregate table, the index is stars rounded to the nearest whole number, and calories, protein, and sugar are all grouped by the aggregate function mean. It can be seen that the highest stars come from a moderate protein level and a low sugar level.
+
+|   avg_rating |   calories |   protein (PDV) |   sugar (PDV) |
+|-------------:|-----------:|----------------:|--------------:|
+|            0 |    431.458 |         26.1583 |       71.0288 |
+|            1 |    517.396 |         32.0761 |       97.6808 |
+|            2 |    485.067 |         32.9594 |       92.5027 |
+|            3 |    484.683 |         37.6013 |       82.6921 |
+|            4 |    429.019 |         35.4949 |       62.6466 |
+|            5 |    400.278 |         31.2887 |       60.0233 |
+
+### Assessment of Missingness
+
+
