@@ -54,4 +54,10 @@ Lastly I replaced some should be null values in the columns. Primarily in the de
 
 The head of the cleaned dataframe is shown below. I included only the inmportant columns for easier viewing.
 
-![Merged and cleaned dataset](merged_cleaned.jpg)
+| name                                 |     id |   minutes |   avg_rating |   calories |   protein (PDV) |   sugar (PDV) |
+|:-------------------------------------|-------:|----------:|-------------:|-----------:|----------------:|--------------:|
+| 1 brownies in the world    best ever | 333281 |        40 |            4 |      138.4 |               3 |            50 |
+| 1 in canada chocolate chip cookies   | 453467 |        45 |            5 |      595.1 |              13 |           211 |
+| 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
+| 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
+| 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
