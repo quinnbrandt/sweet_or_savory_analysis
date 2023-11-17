@@ -66,9 +66,7 @@ The head of the cleaned dataframe is shown below. I included only the inmportant
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 
----
-
-### Univariate Analysis
+# Univariate Analysis
 
 In this section, I explored the distributions of individual columns. The first of which was the protein column. In doing so I found that the bulk of the recipes fell under one of two categories. The vast majority had between 0-20 percent of daily value protein. There was another peak in the data around 40-60 grams of protein.
 
@@ -78,9 +76,7 @@ Another histogram I looked at was the distribution of the average starts column.
 
 <iframe src="assets/star_hist.html" width=800 height=600 frameBorder=0></iframe>
 
----
-
-### Bivariate Analysis
+# Bivariate Analysis
 
 Bivariate analysis consists of comparing two of the columns together. The first way that I did this was to compare the protein and sugar columns. The main takeawy from this was that the two seemed to be negatively correlated with very few high protein meals also having high sugar and vice versa.
 
@@ -90,9 +86,7 @@ Another way that I used bivariate analysis was by comparing the minutes the reci
 
 <iframe src="assets/min_v_len.html" width=800 height=600 frameBorder=0></iframe>
 
----
-
-### Interesting Aggregates
+# Interesting Aggregates
 
 In this aggregate table, the index is stars rounded to the nearest whole number, and calories, protein, and sugar are all grouped by the aggregate function mean. It can be seen that the highest stars come from a moderate protein level and a low sugar level.
 
@@ -105,6 +99,36 @@ In this aggregate table, the index is stars rounded to the nearest whole number,
 |            4 |    429.019 |         35.4949 |       62.6466 |
 |            5 |    400.278 |         31.2887 |       60.0233 |
 
+---
+
 ### Assessment of Missingness
 
+# NMAR
 
+IDK yet
+
+# Missingness Analysis
+
+The review columns is one of three that had many instances of missing values. I noticed that it appeared to be dependent on the number of steps column. I first created a new dataframe with only the rows that had missing review values and took the mean of the number of steps. Then I took the original dataframe and took the mean of the number of steps. The absolute difference between these two came out to about 4.83. I then ran a permutation test where I shuffled the review column 500 times and took the absolute difference of means each time. I found that 0% of the 500 trials had an absolute difference equal to or greater than the test statistic. 
+
+<iframe src="assets/steps_perm_hist.html" width=800 height=600 frameBorder=0></iframe>
+
+I the ran another permutation test using the minutes column. I originally expected this to have a similar result as the number of steps permutation test. I ran the same test, shuffling the review column 500 times. I got an absolute difference in minutes of about 23.23 as the test statistic. After running the permutation test, I found that about 81.8% of the results were equal to or greater than the test statistic.
+
+<iframe src="assets/mins_perm_hist.html" width=800 height=600 frameBorder=0></iframe>
+
+### Hypothesis Testing
+
+The question I chose to explore was whether sweet or savory recipes had a higher average rating. I defined sweet recipes as those with 75th percentile or higher sugar and 25th percentile or lower protein. Savory recipes are defined as 75th percentile or higher protein and 25th percentile or lower sugar. I used a permutation test to evaluate this question.
+
+# Set Up
+
+Null Hypothesis: Both sweet and savory recipes are rated the same by reviewers.
+
+Alternative Hypothesis: Reviewers rate sweet and savory recipes differently.
+
+For this I first found a test statistic by creating two filtered datasets. One with only savory meals, and the other with only sweet meals. I calculated the mean of the average stars column in each and then took the absolute difference giving me a test statistic of of about 0.054. I chose a p-value of 0.05.
+
+I then ran a permutation test in which I shuffled the average rating column. Then created the same two datasets as above and took the means. I took the absolute difference and added it to a list. I repeated those steps 500 times and found that the number of absolute differences that were greater than or equal to my test statistic was 0. Thus I was able to reject the null hypothesis. 
+
+<iframe src="assets/hyp_his_hist.html" width=800 height=600 frameBorder=0></iframe>
