@@ -61,3 +61,7 @@ The head of the cleaned dataframe is shown below. I included only the inmportant
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
 | 412 broccoli casserole               | 306168 |        40 |            5 |      194.8 |              22 |             6 |
+
+### Univariate Analysis
+In this section, I explored the distributions of individual columns. The first of which was the protein column. In doing so I found that the bulk of the recipes fell under one of two categories. The vast majority had between 0-20 percent of daily value protein. There was another peak in the data around 40-60 grams of protein.
+<iframe src="assets/protein_hist.html" width=800 height=600 frameBorder=0></iframe>
